@@ -1,3 +1,50 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": [
+		"next",
+		"next/core-web-vitals",
+		"plugin:prettier/recommended",
+		"prettier"
+	],
+	"globals": {
+		"React": "readonly"
+	},
+	"plugins": ["prettier"],
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"import/order": [
+			"error",
+			{
+				"pathGroups": [
+					{
+						"pattern": "~/**",
+						"group": "external",
+						"position": "after"
+					}
+				],
+				"groups": [
+					"builtin",
+					"external",
+					"internal",
+					"unknown",
+					"parent",
+					"sibling",
+					"index",
+					"object",
+					"type"
+				],
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				},
+				"newlines-between": "always"
+			}
+		]
+	}
 }
