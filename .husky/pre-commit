@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+#echo '🏗️👷 Fixing Auto-Fixable Styling for your project before committing'
+## Fix auto-fixable lint issues
+yarn lint-fix
+
+#echo '🏗️👷 Checking Lint for project'
+## Check ESLint Standards
+yarn lint ||
+(
+        echo '😤🏀👋😤 ESLint Check Failed.  😤🏀👋😤
+                Make the required changes listed above, add changes and try to commit again.'
+        false;
+)
+
+#echo '🏗️👷 Checking Lint for project'
+## Check tsconfig standards
+#yarn check-types ||
+#(
+#    echo '🤡😂❌🤡 Failed Type check. 🤡😂❌🤡
+#            Are you seriously trying to write that? Add changes and try to commit again.'
+#    false;
+#)
+
+# If everything passes... Now we can commit
+#echo '🤔🤔🤔🤔... Alright.... Code looks good to me...🤔🤔🤔🤔'
+## If everything passes... Now we can commit
+#echo '✅✅✅✅ All check passed you win this time... I am trying to commit this now. ✅✅✅✅'
