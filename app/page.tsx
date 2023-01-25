@@ -1,12 +1,34 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 
 import SongCard from '@/components/SongCard';
 import { getData } from '@/services';
 import { genres } from '@/utils/constants';
 
+const initialActiveSong = {
+	id: 2,
+	title: 'iPhone X',
+	description:
+		'SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...',
+	price: 899,
+	discountPercentage: 17.94,
+	rating: 4.44,
+	stock: 34,
+	brand: 'Apple',
+	category: 'smartphones',
+	thumbnail: 'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
+	images: [
+		'https://i.dummyjson.com/data/products/2/1.jpg',
+		'https://i.dummyjson.com/data/products/2/2.jpg',
+		'https://i.dummyjson.com/data/products/2/3.jpg',
+		'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
+	],
+};
+
 const Home = () => {
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [activeSong, setActiveSong] = useState(initialActiveSong);
 	const songs = [
 		{ id: 1, name: 'sddaaff' },
 		{ id: 2, name: 'aadddff' },
@@ -27,8 +49,6 @@ const Home = () => {
 		return <div>Error! {(error as Error).message}</div>;
 	}
 
-	console.log({ data });
-
 	return (
 		<div className='flex flex-col'>
 			<div className='w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10'>
@@ -47,8 +67,15 @@ const Home = () => {
 			</div>
 
 			<div className='flex flex-wrap sm:justify-start justify-center gap-8'>
-				{data.products.map((song: any, index: any) => (
-					<SongCard key={song.id} song={song} index={index} />
+				{data.products.map((song: any) => (
+					<SongCard
+						key={song.id}
+						song={song}
+						activeSong={activeSong}
+						setActiveSong={setActiveSong}
+						isPlaying={isPlaying}
+						setIsPlaying={setIsPlaying}
+					/>
 				))}
 			</div>
 		</div>
