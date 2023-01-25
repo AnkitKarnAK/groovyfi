@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 import { useQuery } from 'react-query';
 
 import SongCard from '@/components/SongCard';
@@ -53,17 +55,12 @@ const Home = () => {
 		<div className='flex flex-col'>
 			<div className='w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10'>
 				<h2 className='font-bold text-3xl text-white'>Discover Music: Test</h2>
-				<select className='bg-gray-900 text-gray-300 p-3 text-sm rounded-lg outline-none'>
-					{genres.map((genre) => (
-						<option
-							value={genre.value}
-							key={genre.id}
-							className='cursor-pointer'
-						>
-							{genre.title}
-						</option>
-					))}
-				</select>
+				<Dropdown
+					className='bg-black text-white w-32'
+					menuClassName='bg-blue-900 text-blue-500 group-hover:bg-blue-300'
+					controlClassName='bg-black text-blue-500'
+					options={genres}
+				></Dropdown>
 			</div>
 
 			<div className='flex flex-wrap sm:justify-start justify-center gap-8'>
