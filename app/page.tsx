@@ -57,8 +57,8 @@ const Home = () => {
 				<h2 className='font-bold text-3xl text-white'>Discover Music: Test</h2>
 				<Dropdown
 					className='w-32'
-					menuClassName='bg-blue-500 text-blue-500 group-hover:bg-blue-300'
-					controlClassName='bg-blue-900 text-blue-200'
+					menuClassName='!bg-blue-500 !text-blue-500'
+					controlClassName='!bg-blue-900 !text-blue-200'
 					options={genres}
 				></Dropdown>
 			</div>
