@@ -56,9 +56,9 @@ const Home = () => {
 			<div className='w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10'>
 				<h2 className='font-bold text-3xl text-white'>Discover Music: Test</h2>
 				<Dropdown
-					className='bg-black text-white w-32'
-					menuClassName='bg-blue-900 text-blue-500 group-hover:bg-blue-300'
-					controlClassName='bg-black text-blue-500'
+					className='w-32'
+					menuClassName='bg-blue-500 text-blue-500 group-hover:bg-blue-300'
+					controlClassName='bg-blue-900 text-blue-200'
 					options={genres}
 				></Dropdown>
 			</div>
