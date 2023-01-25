@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { AnalyticsWrapper } from './components/analytics';
 import '@/styles/globals.css';
+import Sidebar from './components/Sidebar';
 
 export default function RootLayout({
 	children,
@@ -20,7 +21,7 @@ export default function RootLayout({
 			<body>
 				<QueryClientProvider client={queryClient}>
 					<div className='relative flex'>
-						<div>Sidebar</div>
+						<Sidebar />
 						<div className='flex-1 flex flex-col bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-700 via-blue-800 to-gray-900'>
 							<div>Searchbar</div>
 							<div className='px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse'>
