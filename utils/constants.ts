@@ -1,0 +1,16 @@
+export const genres = [
+	{ id: '1', label: 'Pop', value: 'POP' },
+	{ id: '2', label: 'Hip-Hop', value: 'HIP_HOP_RAP' },
+	{ id: '3', label: 'Dance', value: 'DANCE' },
+	{ id: '4', label: 'Electronic', value: 'ELECTRONIC' },
+	{ id: '5', label: 'Soul', value: 'SOUL_RNB' },
+	{ id: '6', label: 'Alternative', value: 'ALTERNATIVE' },
+	{ id: '7', label: 'Rock', value: 'ROCK' },
+	{ id: '8', label: 'Latin', value: 'LATIN' },
+	{ id: '9', label: 'Film', value: 'FILM_TV' },
+	{ id: '10', label: 'Country', value: 'COUNTRY' },
+	{ id: '11', label: 'Worldwide', value: 'WORLDWIDE' },
+	{ id: '12', label: 'Reggae', value: 'REGGAE_DANCE_HALL' },
+	{ id: '13', label: 'House', value: 'HOUSE' },
+	{ id: '14', label: 'K-Pop', value: 'K_POP' },
+];
