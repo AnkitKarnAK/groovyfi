@@ -47,7 +47,7 @@ const Home = () => {
 			</div>
 
 			<div className='flex flex-wrap sm:justify-start justify-center gap-8'>
-				{data.products.map((song, index) => (
+				{data.products.map((song: any, index: any) => (
 					<SongCard key={song.id} song={song} index={index} />
 				))}
 			</div>
